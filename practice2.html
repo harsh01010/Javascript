@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice2</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            background-color: #414141;
+            color: aliceblue;
+        }
+
+        nav {
+            display: flex;
+            gap: 5vw;
+            justify-content: center;
+            border: 2px solid red;
+            height: 5vh;
+            width: 98vw;
+            margin-left: 1vw;
+            margin-top: 1vw;
+        }
+
+        li {
+            list-style: none;
+            background-color: ;
+        }
+
+        #home,
+        #About,
+        #Services,
+        #Contact {
+
+            margin-top: 4px;
+            border: 1px solid wheat;
+            height: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <li id="home">Home</li>
+        <li id="About">About</li>
+        <li id="Services">Services</li>
+        <li id="Contact">Contact</li>
+    </nav>
+
+    <table>
+        <td>Hello</td>
+        <tr>Hello 1</tr>
+        <tr>Hello 2</tr>
+        <tr>Hello 3</tr>
+        <tr>Hello 4</tr>
+    </table>
+
+    <script>
+        id1 = document.getElementById("home")
+        id1.style.color = "red"
+        id1.style.backgroundColor = "yellow"
+
+        document.getElementsByTagName("nav")[0].firstElementChild.nextElementSibling.style.color = "skyblue"
+
+        /* or
+        document.getElementsByTagName("li")[0].nextElementSibling.style.color="skyblue"
+        */
+
+        Array.from(document.getElementsByTagName("li")).forEach(element => {
+            element.style.backgroundColor = "cyan"
+        }); // since we are using foreach which is an array method so we have to use
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+
+        /*
+        setTimeout and setInterval
+        setTimeout allows us to run a function once after the interval of time
+
+        let timerId = setTimeout(function,<delay in ms>,<arg1>,<arg2>...) , <arg1> , <arg2> are the arguments of the function passed to setTimeout
+
+        clearTimeout(timerId) -> used to cancel the execution 
+
+        setInterval(function,<delay in ms>,<arg1>,<arg2>..) -> similar to setTimeout but it repeats again and again after given delay duration
+        */
+        document.write("hello")
+        let a = setTimeout(function(){
+            alert("i am inside of settimeout")
+        },2000)
+
+        let b = prompt("do you want to run the settimeout?(press anything except 'n'")
+        if(b=='n'){
+        clearTimeout(a)}
+        console.log(a)
+
+        let c = setInterval(function(){
+            alert("hello , setInterval is running")
+        }, 1000);
+        clearInterval(c)
+    </script>
+</body>
+</html>

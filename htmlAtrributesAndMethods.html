@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html attributes and their methods</title>
+</head>
+<body>
+    
+    <div id="id1"><p>Hello ,world! how are you?</p></div>
+
+
+    <script>
+        /*
+        elem.hasAttribute(name) -> method to check for existance of an attribute
+        elem.getAttribute(name)->Method used to get the value of an attribute
+        ele.setAttribute(name,value)->mthod used of set the value of an attribute
+        elem.removeAttribute(name)->method to remove the attribute from elem
+        ele.attributes -> method to get the collection of all attributes
+
+        data-* attributes:
+        we can always create custom attributes but tyhe ones starting with "data-" are reserved for programmers use , they are available in a property named dataset
+
+        if an element has an attribute named "data-one",its available as element.dataset.one
+         */
+        let x = document.getElementById("id1")
+        console.log(x.hasAttribute("id"))
+        console.log(x.hasAttribute("class"))
+        console.log(x.getAttribute("id"))
+        x.setAttribute("class","container")
+        console.log(x.getAttribute("class"))
+        x.removeAttribute("class")
+        console.log(x.attributes)
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice</title>
+    <style>
+        .buttons{
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .bulbcontainer{
+            margin-top: 40px;
+            margin-left: 50px;
+            height: 200px;
+            width: 200px;
+            background-color: red;
+            display: flex;
+            justify-content: center;
+            color: black;
+            font-size: x-large;
+            border-radius: 400px;
+        }
+        .bulbStop{
+            margin-top: 40px;
+            margin-left: 50px;
+            height: 200px;
+            width: 200px;
+            display: flex;
+            justify-content: center;
+            color: black;
+            font-size: x-large;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="buttons">
+        <button id="id1">btn 1</button>
+        <button id="id2">btn 2</button>
+        <button id="id3">btn 3</button>
+        <button id="id4">btn 4</button>
+    </div>
+
+    <h1>Bookmarks</h1>
+    <button  class="bookmarks">Google</button>
+    <button class="bookmarks">Facebook</button>
+    <button class="bookmarks">Twitter</button>
+    <button class="bookmarks">Github</button>
+
+
+        <div id="bulbcontainer" class="bulbcontainer bulbStop">
+            <p class="bulb">hello</p>
+        </div>
+    <script>
+        let x = document.getElementsByTagName("button")
+
+        x[0].onclick = function(){
+            alert("hello world!")
+        }
+        x[1].onclick = function(){
+            alert("how are you?")
+        }
+        x[2].onclick = function(){
+            alert("what's going on?")
+        }
+        x[3].onclick = function(){
+            alert("namaste!")
+        }
+        let y = document.getElementsByClassName("bookmarks")
+        y[0].addEventListener('click',function(event){
+            window.location = "https://google.com"
+        })
+        y[1].addEventListener('click',function(event){
+            window.location = "https://fb.com"
+        })
+        y[2].addEventListener("click",function(event){
+            window.location = "https://twitter.com"
+        })
+        y[3].addEventListener("click",function(event){
+            window.location = "https://github.com"
+        })
+
+
+        setInterval( function(){
+            document.querySelector("#bulbcontainer").classList.toggle("bulbcontainer")
+        },500)
+    </script>
+</body>
+</html>

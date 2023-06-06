@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice1</title>
+</head>
+<body>
+    <script>
+        let yes = true
+        while(yes){
+        let age = prompt("enter your age: ")
+        age = Number.parseInt(age);
+        if(age<0)
+        {
+            console.error("enter a valid age")
+        }
+        if(age <18)
+            alert("You can not drive!")
+        else if(age>18 && age<75)
+            confirm("you can drive.")
+
+        if(age==4)
+            location.href = "https://www.google.com"
+
+            let color = prompt("enter the page background color: ")
+            document.body.style.backgroundColor = color;
+
+        let again = prompt(`do you want to see the prompt again(enter "yes"): `)
+        yes = again==`yes`;
+        }
+    </script>
+
+</body>
+</html>

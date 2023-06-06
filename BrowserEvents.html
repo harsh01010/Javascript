@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrowserEvents</title>
+</head>
+
+<body>
+    <div class="container" onmouseenter="console.log('mouse is in container')">
+        <button onclick="alert('hello');let a = 6;console.log(a)">click me</button>
+    </div>
+
+    <hr><br>
+    <button id="id1">click me</button>
+    <hr>
+    <br>
+    <div id="box">
+        <button id="btn">Click Me</button>
+    </div>
+
+    <script>
+        /*
+        Browser Events
+        an event is a signal that something has happend.
+        All the Dom nodes generate such signals.
+
+        some important DOM events are:
+        mouse events : click , contextmenue(right click),mouseover/mouseout,mousedown/mouseup,mousemove
+
+        keyboard events : keydown and up
+
+        form element events : submit,focus etc
+
+        document events : DOMContextLoaded
+        */
+        document.getElementById("id1").onclick = function () {
+            alert("hello world")
+        } // function must be used
+
+
+        /*
+        handling browser events
+        addEventListener and removeEventListener
+        addEventListener is used to assign multiple handlers to an event
+ 
+        element.addEventListener(event,handler)
+        element.removeEventListener(event,handler)
+                                 handler must be the same function object for this to work
+ 
+        The event object
+        when an event happens, The browser creates an event object puts details into it and passes it as an argument to the handler
+ 
+        elem.onclick = function(event){
+             ...
+        }
+        event.type : event type
+        event.currentTarget : element that handled the event
+        event.clientX / event.clientY : coordinates of the cursor
+ 
+         
+        */
+        let b = prompt("whats is your favorite number?")
+        let btn = document.getElementById("btn")
+
+        let x = function (event) {
+            console.log(event)
+            document.getElementById("box").innerHTML = "Hello world1"
+
+        }
+
+        let y = function (event) {
+            console.log(event)
+            document.getElementById("box").innerHTML = "Hello world2"
+        }
+        let e1 = btn.addEventListener('click', x)
+
+        let e2 = btn.addEventListener('click', y)
+
+        if (b == 2) {
+            btn.removeEventListener('click', x)
+        }
+        if (b == 1) {
+            btn.removeEventListener('click', y)
+        } // b is not 1 or 2 then hello world2 will be written because of the document.write
+
+
+
+    </script>
+</body>
+
+</html>

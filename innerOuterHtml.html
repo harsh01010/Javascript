@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inner and Outer Html</title>
+</head>
+<body>
+    hello world
+    <span id="first"> <b>Hey</b> I am <b>Span</b></span>
+    <span id="second">Hello world Again!</span>
+    <script>
+        /*
+        consloe.log shows the element DOM tree
+        console.dir shows the element as an object with its properties
+        */
+        console.log(document.getElementsByTagName("span")[0])
+        console.dir(document.getElementsByTagName("span")[0])
+
+        /*
+        tagName -> only exists for element nodes
+        nodeName -> defined for any node(text,comment,e.t.c.)
+        */
+        console.log(document.body.firstChild.nodeName)
+        console.log(document.body.firstElementChild.nodeName)
+
+        /*
+        innerHtml :
+            The innerHtml property allows to get the HTML inside the element as a string(valid for element node only)
+        outerHtml:
+            The outerHtml property contains the full HTML innerHtml+the element itself
+        
+        innerHtml is valid only for element nodes , for other node types we can use nodeValue or data
+        */
+        let x = document.getElementById("first")
+        console.log(x.innerHTML)
+        console.log(x.outerHTML)
+
+        console.log(document.body.firstChild.nodeValue)
+        /*
+        textContent
+        provides access to the text inside the element only text ,minus all the tags.
+        */
+        console.log(document.body.textContent)
+
+        /*
+        The hidden attribute and the DOM property specifies whether the element is visible or not
+        */
+        document.body.firstElementChild.nextElementSibling.hidden = true
+    </script>
+</body>
+</html>      

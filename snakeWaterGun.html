@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>snakeWaterGun</title>
+</head>
+<body>
+    <script>
+        let count = 5
+        let score = 0
+        while(count>0){
+        let user = prompt("Enter s for snake , w for water , g for gun: ")
+        //alert(`${user} , ${typeof user} , ${user == 's'}`)
+        if(user != "s" && user != `w` && user != `g`)
+        {
+            alert("Wrong input!")
+            continue
+        }
+
+        let rand = Math.floor((Math.random()*3)+1)
+        
+
+        // 1 = snake , 2 = water , 3 = gun
+        let generated = rand==1?'s':(rand==2?'s':'g');
+        //prompt(generated)
+        if( (user == `s` && generated == `w`) || (user==`w`&&generated=='g')||(user==`g`&&generated==`s`))
+        {
+            score++
+            confirm("You won!")
+        }
+        else if(user == generated)
+        {
+            prompt("DRAW!")
+            continue
+        }
+        else 
+        {
+
+            confirm(`computer's choice is ${generated=='s'?'snake':(generated=='g'?'gun':'water')} , you lost!`)
+        }
+        count--
+    }
+
+    document.write(`you score: ${score} out of 5`);
+    </script>
+</body>
+</html>

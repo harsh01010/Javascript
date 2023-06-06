@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    I am start of this containerr(outer)
+    <div class="container-">
+        I am start of this container(outer)
+        <div id="box">hello world , how are you</div>
+        I am end of this container(inner)
+    </div>
+    I am end of this container(outer)
+    <hr><br>
+    <div id="id1">This is another div in body</div>
+
+    <br>
+
+    <div id="first">Hey i am first</div>
+
+    <script>
+        let z = document.getElementById("box")
+        z.innerHTML = z.innerHTML + "<br>how it's <b>going</b> on"
+
+
+        /*
+        we looked at some ways to insert elements in the dom , here is another way:
+        node.append(e) -> append at the end of the node
+        node.prepend(e) -> insert at the begining of node
+        node.before(e) -> insert before node
+        node.after(e) -> insert after node
+        node.replaceWith(e) -> replaces node with the given node
+                */
+            let y = document.getElementsByTagName("div")[0];
+            y.append("This is another html(append)")
+            y.prepend("this is another html(prepend)")
+            y.before("this is another html(before)")
+            y.after("this is another html(after)")
+            
+            /*
+            insertAdjecentHtml/Text/Element
+
+            */
+            let x = document.getElementById("first")
+            x.insertAdjacentHTML('beforeend',"hello world beforeend")
+            x.insertAdjacentHTML("afterend","not hello world(afterend")
+            x.insertAdjacentHTML("afterbegin","after begin")
+            x.insertAdjacentHTML("beforebegin","beforebegin")
+
+
+            /*
+            node removal
+            to remove a node, there is a method node.reomve()
+            */
+            let id1 = document.getElementById("box")
+            id1.remove()
+
+    </script>
+</body>
+</html>
