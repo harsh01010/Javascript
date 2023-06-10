@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            background-color: #414141;
+            color: white;
+        }
+
+        .box {
+            border: 2px solid white;
+            width: 60vw;
+            height: 20vh;
+            display: flex;
+            margin-top: 5vh;
+            margin-left: 18vw;
+
+        }
+
+        .hr,
+        .min,
+        .sec {
+            height: 20vh;
+            width: 20vw;
+            border: 1px solid white;
+        }
+
+        p {
+            font-size: 8vh;
+            margin-top: 4.5vh;
+            margin-left: 4vw;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <div class="hr"></div>
+        <div class="min"></div>
+        <div class="sec"></div>
+    </div>
+
+    <script>
+        function update() {
+            var t = new Date();
+            let hr = document.getElementsByClassName("hr")[0];
+            let min = hr.nextElementSibling;
+            let sec = min.nextElementSibling;
+            let h = t.getHours() > 12 ? t.getHours() - 12 : t.getHours();
+            let m = t.getMinutes();
+            let s = t.getSeconds();
+            hr.innerHTML = `<p>${h}</p>`;
+            min.innerHTML = `<p>${m}</p>`;
+            sec.innerHTML = `<p>${s}</p>`;
+            //console.log(sec);
+        }
+        setInterval(() => {
+            update()
+        }, 1000);
+
+    </script>
+
+</body>
+
+</html>
