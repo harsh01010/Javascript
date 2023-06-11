@@ -32,5 +32,61 @@ let promise = new Promise(function(resolve,reject){
     console.log("hello")
 })
 console.log(promise)
-   
 
+
+/*
+consumers: .then() and .catch()
+    The consuming code can receive the final result of a promise through then and catch
+
+    the most fundamental one is then
+    promise.then(function(result){
+        //handle
+    },function(error){
+        //handle error
+    });
+
+If we are interested only in successful copletions, then we can provide only one function argument in then()
+
+prmise.then((value)=>{
+    console.log(value)
+});
+if we are interested only in errors , we can pass null as the first argument : .then(null,f) or we can use catch:
+promise.catch((error)=>
+{
+    console.log(error);
+})
+*/
+
+let p1 = new Promise((resolve,reject)=>{ // what ever is promised will be executed in bakcround
+    console.log("promise is pending")
+    setTimeout(()=>{
+        //console.log("I am a promise and i am resolved")
+        resolve(true)
+        //reject(new Error("I am an error"))
+    },5000)
+    
+})
+let p2 = new Promise((resolve,reject)=>{ // what ever is promised will be executed in bakcround
+    console.log("promise is pending")
+    setTimeout(()=>{
+        //console.log("I am a promise and i am rejected")
+        //resolve(true)
+        reject(new Error("I am an error"))
+    },5000)
+
+})
+console.log(p1)
+console.log(p2)
+
+p1.then((value)=>{
+    console.log(value)
+})
+/*p2.catch((error)=>{
+    console.log(`some error occured in p2`)
+})*/
+p2.then((value)=>{
+    console.log(value)
+}
+,(error)=>{
+    console.log(error)
+})
