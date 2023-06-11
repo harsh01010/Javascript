@@ -54,7 +54,7 @@ if we are interested only in errors , we can pass null as the first argument : .
 promise.catch((error)=>
 {
     console.log(error);
-})
+}) 
 */
 
 let p1 = new Promise((resolve,reject)=>{ // what ever is promised will be executed in bakcround
